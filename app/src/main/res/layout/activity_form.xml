@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".ui.home.HomeActivity">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/_10dp"
+                android:paddingEnd="@dimen/_10dp"
+                android:paddingTop="@dimen/_25dp"
+                android:layout_marginStart="@dimen/_15dp"
+                app:srcCompat="@drawable/ic_arrow_back"
+                app:layout_constraintTop_toTopOf="@id/tvHeading"
+                app:layout_constraintBottom_toBottomOf="@id/tvHeading"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHeading"
+                android:text="@string/search_requirement"
+                style="@style/Text.24.Blue.ProductSans"
+                android:layout_marginTop="@dimen/_20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_25dp"
+                android:paddingEnd="@dimen/_15dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivBack" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilRequirementType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_margin="@dimen/_25dp"
+                android:hint="@string/choose_your_requirement"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvHeading"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Text.14.Blue.ProductSans"
+                    android:editable="false"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_margin="@dimen/_25dp"
+                android:hint="@string/select_your_state"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tilRequirementType"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Text.14.Blue.ProductSans"
+                    android:editable="false"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_margin="@dimen/_25dp"
+                android:hint="@string/select_your_city"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tilState"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Text.14.Blue.ProductSans"
+                    android:editable="false"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvChangeCountry"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_15dp"
+                android:background="?selectableItemBackground"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/_10dp"
+                style="@style/Text.11.linkBlue.ProductSans"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tilCity"
+                tools:text="Not from India? Click here to select your country"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilLandmark"
+                android:layout_width="@dimen/_0dp"
+                app:layout_constraintHorizontal_weight="2"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_marginStart="@dimen/_25dp"
+                android:layout_marginEnd="@dimen/_25dp"
+                android:hint="@string/enter_landmark"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvChangeCountry"
+                app:layout_constraintEnd_toStartOf="@id/tilQuantity">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Text.14.Blue.ProductSans"
+                    android:singleLine="true"
+                    android:inputType="textPostalAddress"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilQuantity"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintHorizontal_weight="1"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_marginEnd="@dimen/_25dp"
+                android:hint="@string/quantity"
+                app:layout_constraintStart_toEndOf="@id/tilLandmark"
+                app:layout_constraintTop_toBottomOf="@id/tvChangeCountry"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Text.14.Blue.ProductSans"
+                    android:singleLine="true"
+                    android:maxLength="11"
+                    android:inputType="number"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/llContactDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tilLandmark"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_contact"
+                android:id="@+id/tvAddMoreContacts"
+                android:drawableStart="@drawable/ic_add"
+                android:drawablePadding="@dimen/_5dp"
+                android:padding="@dimen/_15dp"
+                android:background="?selectableItemBackground"
+                android:drawableTint="@color/blue"
+                style="@style/Text.16.Grey.ProductSans"
+                android:textColor="@color/blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/llContactDetails"/>
+
+            <androidx.constraintlayout.widget.Group
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/vgUploadDetails"
+                android:visibility="gone"
+                app:constraint_referenced_ids="tilLandmark, tilQuantity, llContactDetails, tvAddMoreContacts"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvProceed"
+                android:background="@drawable/button_round_background"
+                tools:text="@string/search"
+                style="@style/Text.22.White.ProductSans"
+                android:gravity="center"
+                android:paddingTop="@dimen/_10dp"
+                android:paddingBottom="@dimen/_10dp"
+                android:layout_marginStart="@dimen/_25dp"
+                android:layout_marginEnd="@dimen/_25dp"
+                android:layout_marginTop="@dimen/_15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvAddMoreContacts"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

@@ -1,10 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Verified</string>
-    <string name="hashtag_together_we_can">#togetherWeCan</string>
     <string name="choose_your_requirement">Choose your requirement</string>
     <string name="select_your_state">Select your state</string>
     <string name="select_your_city">Select your district</string>
-    <string name="search">Search</string>
     <string name="verify_contacts">Verify Contacts</string>
     <string name="community_needs_volunteer">Verified is a combined effort of our online community. Want to volunteer?</string>
     <string name="update_requirements">Update Requirements</string>
@@ -15,13 +13,4 @@
     <string name="last_updated_on">Last Updated On</string>
     <string name="showVerified">Show only verified contacts</string>
     <string name="have_verification_done">verified?</string>
-    <string name="enter_mobile_number">Enter Mobile Number</string>
-    <string name="add_contact">Add Another Contact</string>
-    <string name="enter_landmark">Enter Landmark</string>
-    <string name="search_contacts">Search Contacts</string>
-    <string name="your_bookmarks">Your Bookamrks</string>
-    <string name="recent_searches">Recent Searches</string>
-    <string name="didnt_find">Didn\'t find what you\'re looking for?</string>
-    <string name="contact_us">Contact us</string>
-    <string name="share_with_friends">Share us with friends</string>
 </resources>
