@@ -16,8 +16,14 @@
 
     <style name="Text.22.Blue.GoogleSans" parent="TextAppearance.AppCompat.Title">
         <item name="android:textSize">@dimen/_22sp</item>
-        <item name="fontFamily">sans-serif-condensed</item>
+        <item name="fontFamily">@font/product_sans_bold</item>
         <item name="android:textColor">@color/purple_700</item>
+    </style>
+
+    <style name="Text.18.Black.GoogleSans" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textSize">@dimen/_18sp</item>
+        <item name="fontFamily">@font/product_sans_bold</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="Text.22.White.ProductSans" parent="TextAppearance.AppCompat.Title">

@@ -48,4 +48,16 @@ class DataRepositoryImpl @Inject constructor(
     override var isAppLaunchedForTheFirstTime: Boolean
         get() = preference.isAppLaunchedForTheFirstTime
         set(value) {preference.isAppLaunchedForTheFirstTime = value}
+    override var isLoggedIn: Boolean
+        get() = preference.isLoggedIn
+        set(value) {preference.isLoggedIn = value}
+    override var country: String?
+        get() = preference.country
+        set(value) {preference.country = value}
+    override var accountId: String?
+        get() = preference.accountId
+        set(value) {preference.accountId = value}
+    override var accountIdToken: String?
+        get() = preference.accountIdToken
+        set(value) {preference.accountIdToken = value}
 }

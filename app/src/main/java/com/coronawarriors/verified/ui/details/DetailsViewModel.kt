@@ -1,7 +1,10 @@
 package com.coronawarriors.verified.ui.details
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class DetailsViewModel @ViewModelInject constructor(): ViewModel() {
+
+@HiltViewModel
+class DetailsViewModel @Inject constructor(): ViewModel() {
 }

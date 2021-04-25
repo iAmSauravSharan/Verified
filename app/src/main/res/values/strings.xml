@@ -21,7 +21,24 @@
     <string name="search_contacts">Search Contacts</string>
     <string name="your_bookmarks">Your Bookamrks</string>
     <string name="recent_searches">Recent Searches</string>
-    <string name="didnt_find">Didn\'t find what you\'re looking for?</string>
+    <string name="didnt_find">Did not find what you are looking for?</string>
     <string name="contact_us">Contact us</string>
     <string name="share_with_friends">Share us with friends</string>
+    <string name="add_new_resources">Add New Resource</string>
+    <string name="nope">Nope</string>
+    <string name="correct">Correct</string>
+    <string name="extra_notes">Extra Notes</string>
+    <string name="reward_your_search">Try rewarding your search with different text</string>
+    <string name="try_again">Try again with different requirement/location</string>
+    <string name="enter_extra_detail">Enter detail about the requirement</string>
+    <string name="login">Log in</string>
+    <string name="want_to_contribute">Want to contribute?</string>
+    <string name="signin_error">There was a trouble signing in. Please try again</string>
+    <string name="login_successful">Login successfully</string>
+    <string name="login_failed">Login Failed</string>
+    <string name="log_out">Click here to log out</string>
+    <string name="not_from">Not from</string>
+    <string name="change_country">\? Click here to select your country</string>
+    <string name="upload">Upload</string>
+    <string name="update">Update</string>
 </resources>

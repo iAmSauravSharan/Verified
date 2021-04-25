@@ -8,7 +8,8 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 
 class DatabaseManagerImpl(@ApplicationContext private val context: Context): DatabaseManager {
 
-    private var database: AppDatabase = AppDatabase.getDatabase(context)
+//    private var database: AppDatabase = AppDatabase.getDatabase(context)
+    private lateinit var database: AppDatabase
     override suspend fun getRequirementByCity(
         city: String,
         isVerified: Boolean

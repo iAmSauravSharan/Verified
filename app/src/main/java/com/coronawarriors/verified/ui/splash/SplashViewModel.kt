@@ -1,8 +1,10 @@
 package com.coronawarriors.verified.ui.splash
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class SplashViewModel @ViewModelInject constructor(): ViewModel() {
+@HiltViewModel
+class SplashViewModel @Inject constructor(): ViewModel() {
 
 }

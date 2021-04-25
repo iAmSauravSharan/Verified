@@ -49,5 +49,49 @@
             app:layout_constraintTop_toBottomOf="@id/etSearch"
             app:layout_constraintEnd_toEndOf="parent" />
 
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading_animation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/statusAnimation"
+            android:layout_width="@dimen/_200dp"
+            android:layout_height="@dimen/_200dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            android:layout_marginBottom="@dimen/_25dp"
+            app:lottie_rawRes="@raw/nodata_animation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvStatusMessage"
+            style="@style/Text.18.Black.GoogleSans"
+            tools:text="@string/reward_your_search"
+            android:textAlignment="textStart"
+            android:layout_marginTop="@dimen/_20dp"
+            app:layout_constraintStart_toStartOf="@id/statusAnimation"
+            app:layout_constraintEnd_toEndOf="@id/statusAnimation"
+            app:layout_constraintTop_toBottomOf="@id/statusAnimation" />
+
+        <androidx.constraintlayout.widget.Group
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/vgStatus"
+            android:visibility="gone"
+            app:constraint_referenced_ids="statusAnimation, tvStatusMessage" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

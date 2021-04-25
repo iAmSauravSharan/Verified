@@ -1,8 +1,10 @@
 package com.coronawarriors.verified.ui.search
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class SearchViewModel @ViewModelInject constructor(): ViewModel() {
+@HiltViewModel
+class SearchViewModel @Inject constructor(): ViewModel() {
 
 }

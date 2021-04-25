@@ -11,7 +11,19 @@
     android:layout_marginEnd="@dimen/_10dp"
     android:background="@drawable/contact_round_border">
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivCorrect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_thumb_up"
+        android:paddingStart="@dimen/_7dp"
+        android:paddingEnd="@dimen/_10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvContact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="+91 9790345608"
@@ -20,7 +32,25 @@
         android:drawableStart="@drawable/ic_non_verified"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintStart_toEndOf="@id/ivCorrect"
+        app:layout_constraintEnd_toStartOf="@id/ivNotCorrect" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivNotCorrect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_thumb_down"
+        android:paddingStart="@dimen/_10dp"
+        android:paddingEnd="@dimen/_7dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <androidx.constraintlayout.widget.Group
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/vgVerifyView"
+        android:visibility="gone"
+        app:constraint_referenced_ids="ivCorrect, ivNotCorrect" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,8 @@ import android.content.SharedPreferences
 import android.os.Build
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKeys
+import com.coronawarriors.verified.util.Constants.DEFAULT_COUNTRY
+import com.coronawarriors.verified.util.Constants.EMPTY_STRING
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
@@ -13,6 +15,10 @@ class PreferenceManagerImpl(@ApplicationContext private val context: Context): P
 
     companion object {
         const val APP_LAUNCH_STATUS = "app_launch_status"
+        const val LOGIN_KEY = "login_key"
+        const val COUNTRY_KEY = "country_key"
+        const val ACCOUNT_ID_KEY = "account_id_key"
+        const val ACCOUNT_TOKEN_KEY = "account_token_key"
     }
 
     private val name: String = "preferences"
@@ -32,6 +38,14 @@ class PreferenceManagerImpl(@ApplicationContext private val context: Context): P
 
     override var isAppLaunchedForTheFirstTime: Boolean by BooleanPreference(
         sharedPreferences, APP_LAUNCH_STATUS, true)
+    override var isLoggedIn: Boolean by BooleanPreference(
+        sharedPreferences, LOGIN_KEY, false)
+    override var country: String? by StringPreference(
+        sharedPreferences, COUNTRY_KEY, DEFAULT_COUNTRY)
+    override var accountId: String? by StringPreference(
+        sharedPreferences, ACCOUNT_ID_KEY, EMPTY_STRING)
+    override var accountIdToken: String? by StringPreference(
+        sharedPreferences, ACCOUNT_TOKEN_KEY, DEFAULT_COUNTRY)
 
 }
 
