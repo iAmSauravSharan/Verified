@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
     id 'com.google.gms.google-services'
+    id 'org.jetbrains.kotlin.android.extensions'
 }
 
 android {
@@ -18,12 +19,23 @@ android {
         versionName "1.0"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "DEVELOPER_EMAIL", "\"contact@developer.com\""
+        buildConfigField "String", "FIREBASE_KEY", "\"MvYt2hsdfsdzTxwBU6eyj\""
+        buildConfigField "String", "STORE_LINK", "\"https://play.google.com/store/apps/details?id=com.rosdfadyo.rider\""
     }
 
     buildTypes {
         release {
+            debuggable  false
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
@@ -36,6 +48,10 @@ android {
 
     buildFeatures {
         dataBinding true
+    }
+
+    androidExtensions {
+        experimental = true
     }
 }
 

@@ -5,6 +5,10 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.coronawarriors.verified.ui.form.FormViewModel" />
+
     </data>
 
     <ScrollView
@@ -17,30 +21,14 @@
             android:layout_height="wrap_content"
             tools:context=".ui.home.HomeActivity">
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/ivBack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="@dimen/_10dp"
-                android:paddingEnd="@dimen/_10dp"
-                android:paddingTop="@dimen/_25dp"
-                android:layout_marginStart="@dimen/_15dp"
-                app:srcCompat="@drawable/ic_arrow_back"
-                app:layout_constraintTop_toTopOf="@id/tvHeading"
-                app:layout_constraintBottom_toBottomOf="@id/tvHeading"
-                app:layout_constraintStart_toStartOf="parent"/>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvHeading"
-                android:text="@string/search_requirement"
-                style="@style/Text.24.Blue.ProductSans"
-                android:layout_marginTop="@dimen/_20dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="@dimen/_25dp"
-                android:paddingEnd="@dimen/_15dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toEndOf="@id/ivBack" />
+            <include
+                android:id="@+id/include"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                layout="@layout/layout_header"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilRequirementType"
@@ -50,13 +38,15 @@
                 android:layout_margin="@dimen/_25dp"
                 android:hint="@string/choose_your_requirement"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvHeading"
+                app:layout_constraintTop_toBottomOf="@id/include"
                 app:layout_constraintEnd_toEndOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/Text.14.Blue.ProductSans"
+                    android:imeOptions="actionNext"
+                    android:onClick="@{() -> viewModel.onRequirementTypeClicked()}"
                     android:editable="false"/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -76,6 +66,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/Text.14.Blue.ProductSans"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
                     android:singleLine="true"/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -95,6 +87,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/Text.14.Blue.ProductSans"
+                    android:imeOptions="actionNext"
+                    android:onClick="@{() -> viewModel.onStateClicked()}"
                     android:editable="false"/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -114,6 +108,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/Text.14.Blue.ProductSans"
+                    android:imeOptions="actionNext"
+                    android:onClick="@{() -> viewModel.onCityClicked()}"
                     android:editable="false"/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -126,6 +122,7 @@
                 android:background="?selectableItemBackground"
                 android:gravity="center"
                 android:layout_marginTop="@dimen/_10dp"
+                android:onClick="@{() -> viewModel.onCountryClicked()}"
                 style="@style/Text.11.linkBlue.ProductSans"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -150,6 +147,7 @@
                     android:layout_height="wrap_content"
                     style="@style/Text.14.Blue.ProductSans"
                     android:singleLine="true"
+                    android:imeOptions="actionNext"
                     android:inputType="textPostalAddress"/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -172,6 +170,7 @@
                     style="@style/Text.14.Blue.ProductSans"
                     android:singleLine="true"
                     android:maxLength="11"
+                    android:imeOptions="actionNext"
                     android:inputType="number"/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -192,11 +191,13 @@
                 android:id="@+id/tvAddMoreContacts"
                 android:drawableStart="@drawable/ic_add"
                 android:drawablePadding="@dimen/_5dp"
+                android:layout_marginTop="@dimen/_5dp"
                 android:padding="@dimen/_15dp"
                 android:background="?selectableItemBackground"
                 android:drawableTint="@color/blue"
                 style="@style/Text.16.Grey.ProductSans"
                 android:textColor="@color/blue"
+                android:onClick="@{() -> viewModel.onAddAnotherContact()}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/llContactDetails"/>
@@ -219,6 +220,7 @@
                 android:layout_marginStart="@dimen/_25dp"
                 android:layout_marginEnd="@dimen/_25dp"
                 android:layout_marginTop="@dimen/_15dp"
+                android:onClick="@{() -> viewModel.onSubmit()}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"

@@ -12,18 +12,33 @@
         android:layout_height="match_parent"
         tools:context=".ui.search.SearchActivity">
 
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_arrow_back"
+            app:layout_constraintTop_toTopOf="@id/etSearch"
+            app:layout_constraintBottom_toBottomOf="@id/etSearch"
+            app:layout_constraintStart_toStartOf="parent"
+            android:padding="@dimen/_10dp"
+            android:id="@+id/ivBack"
+            android:layout_marginStart="@dimen/_10dp" />
+
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/etSearch"
-            android:layout_width="match_parent"
+            android:layout_width="@dimen/_0dp"
             android:layout_height="wrap_content"
             android:hint="@string/search"
-            android:text="@string/search"
-            android:layout_marginStart="@dimen/_20dp"
+            android:drawablePadding="@dimen/_10dp"
+            android:layout_marginStart="@dimen/_5dp"
             android:layout_marginEnd="@dimen/_20dp"
-            android:layout_marginTop="@dimen/_5dp"
+            android:layout_marginTop="@dimen/_15dp"
+            android:paddingTop="@dimen/_10dp"
+            android:paddingBottom="@dimen/_10dp"
+            android:background="@drawable/search_background_border_grey"
+            android:paddingStart="@dimen/_15dp"
             style="@style/EditText.16.Grey.ProductSans"
             android:drawableStart="@drawable/ic_search"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivBack"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,7 +51,7 @@
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="@id/etSearch"
             app:layout_constraintTop_toTopOf="@id/etSearch"
-            android:layout_marginEnd="@dimen/_5dp"
+            android:layout_marginEnd="@dimen/_10dp"
             app:layout_constraintBottom_toBottomOf="@id/etSearch" />
 
         <androidx.recyclerview.widget.RecyclerView

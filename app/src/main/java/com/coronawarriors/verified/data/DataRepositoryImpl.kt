@@ -54,6 +54,9 @@ class DataRepositoryImpl @Inject constructor(
     override var country: String?
         get() = preference.country
         set(value) {preference.country = value}
+    override var userName: String?
+        get() = preference.userName
+        set(value) {preference.userName = value}
     override var accountId: String?
         get() = preference.accountId
         set(value) {preference.accountId = value}

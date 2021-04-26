@@ -17,8 +17,7 @@ class SearchActivity : AppCompatActivity() {
 
     private lateinit var mBinding: ActivitySearchBinding
     private val mViewModel: SearchViewModel by viewModels()
-    @Inject
-    lateinit var repository: DataRepositoryImpl
+    @Inject lateinit var repository: DataRepositoryImpl
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

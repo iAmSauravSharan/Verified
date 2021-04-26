@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.coronawarriors.verified">
 
+    <uses-sdk tools:overrideLibrary="androidx.security" />
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-
-    <uses-sdk tools:overrideLibrary="androidx.security" />
 
     <application
         android:name=".VerifiedApp"
@@ -16,7 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Verified">
-        <activity android:name=".ui.form.FormActivity"></activity>
+        <activity android:name=".ui.error.ErrorActivity"></activity>
+        <activity android:name=".ui.settings.SettingsActivity" />
+        <activity android:name=".ui.form.FormActivity" />
         <activity android:name=".ui.search.SearchActivity" />
         <activity android:name=".ui.details.DetailsActivity" />
         <activity android:name=".ui.splash.SplashActivity">
@@ -26,13 +28,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.home.HomeActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".ui.home.HomeActivity" />
     </application>
 
 </manifest>

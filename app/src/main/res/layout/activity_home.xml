@@ -5,6 +5,10 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.coronawarriors.verified.ui.home.HomeViewModel" />
+
     </data>
 
     <ScrollView
@@ -16,6 +20,15 @@
         android:layout_height="wrap_content"
         tools:context=".ui.home.HomeActivity">
 
+        <include
+            android:id="@+id/include"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            layout="@layout/layout_header"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvRecentSearches"
             android:layout_width="match_parent"
@@ -26,7 +39,7 @@
             android:layout_marginStart="@dimen/_5dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/include"
             android:text="@string/recent_searches"/>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -90,6 +103,7 @@
             android:textSize="18sp"
             android:drawablePadding="@dimen/_10dp"
             android:textColor="@color/white"
+            android:onClick="@{() -> viewModel.onSearchClicked()}"
             android:drawableTint="@color/white"
             android:drawableStart="@drawable/ic_search"
             android:drawableEnd="@drawable/ic_right"
@@ -121,8 +135,10 @@
             android:drawableStart="@drawable/ic_round_verified"
             style="@style/Text.14.Blue.ProductSans"
             android:padding="@dimen/_10dp"
+            android:gravity="center_vertical"
             android:drawableEnd="@drawable/ic_right"
             android:background="?selectableItemBackground"
+            android:onClick="@{() -> viewModel.onVerifyContactsClicked()}"
             android:layout_marginStart="@dimen/_15dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -134,11 +150,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Text.14.Blue.ProductSans"
+            android:gravity="center_vertical"
             android:padding="@dimen/_10dp"
             android:drawableEnd="@drawable/ic_right"
             android:drawablePadding="@dimen/_7dp"
             android:drawableStart="@drawable/ic_round_update"
             android:background="?selectableItemBackground"
+            android:onClick="@{() -> viewModel.onUpdateContactsClicked()}"
             android:layout_marginStart="@dimen/_15dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -151,10 +169,12 @@
             android:layout_height="wrap_content"
             style="@style/Text.14.Blue.ProductSans"
             android:padding="@dimen/_10dp"
+            android:visibility="gone"
             android:drawableEnd="@drawable/ic_right"
             android:drawablePadding="@dimen/_7dp"
             android:drawableStart="@drawable/ic_add"
             android:background="?selectableItemBackground"
+            android:onClick="@{() -> viewModel.onAddResourcesClicked()}"
             android:layout_marginStart="@dimen/_15dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -172,67 +192,6 @@
             app:layout_constraintTop_toBottomOf="@id/tvAddNewRequirements"/>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvContactHeading"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/Text.14.Blue.ProductSans"
-            android:paddingStart="@dimen/_10dp"
-            android:textColor="@color/light_grey"
-            android:layout_marginTop="@dimen/_15dp"
-            android:layout_marginStart="@dimen/_15dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/dividerView"
-            android:text="@string/didnt_find"/>
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvContactUs"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/Text.14.Blue.ProductSans"
-            android:paddingEnd="@dimen/_10dp"
-            android:background="?selectableItemBackground"
-            android:layout_marginStart="@dimen/_4dp"
-            app:layout_constraintStart_toEndOf="@id/tvContactHeading"
-            app:layout_constraintTop_toTopOf="@id/tvContactHeading"
-            app:layout_constraintBottom_toBottomOf="@id/tvContactHeading"
-            android:text="@string/contact_us"/>
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvShare"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/Text.14.Blue.ProductSans"
-            android:padding="@dimen/_10dp"
-            android:drawableEnd="@drawable/ic_right"
-            android:drawablePadding="@dimen/_7dp"
-            android:drawableTint="@color/blue"
-            android:drawableStart="@drawable/ic_share"
-            android:background="?selectableItemBackground"
-            android:layout_marginTop="@dimen/_10dp"
-            android:layout_marginStart="@dimen/_15dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvContactUs"
-            android:text="@string/share_with_friends"/>
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/Text.14.Blue.ProductSans"
-            android:id="@+id/tvLogout"
-            android:gravity="center"
-            android:textColor="@color/red"
-            android:paddingTop="@dimen/_10dp"
-            android:paddingBottom="@dimen/_10dp"
-            android:background="?selectableItemBackground"
-            android:fontFamily="@font/product_sans_light_italic"
-            android:layout_margin="@dimen/_15dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvShare"
-            android:text="@string/log_out"/>
-
-        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Text.14.Blue.ProductSans"
@@ -240,9 +199,10 @@
             android:gravity="center"
             android:fontFamily="@font/product_sans_light_italic"
             android:layout_marginTop="@dimen/_25dp"
+            android:onClick="@{() -> viewModel.onMotivateClicked()}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvLogout"
+            app:layout_constraintTop_toBottomOf="@id/dividerView"
             app:layout_constraintBottom_toBottomOf="parent"
             android:text="@string/hashtag_together_we_can"/>
 

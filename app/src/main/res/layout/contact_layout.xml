@@ -1,40 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilContact"
-        android:layout_width="@dimen/_0dp"
-        android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_marginStart="@dimen/_25dp"
-        android:layout_marginEnd="@dimen/_15dp"
-        android:layout_marginTop="@dimen/_15dp"
-        android:hint="@string/enter_mobile_number"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/cbVerified">
+    <data>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/Text.14.Blue.ProductSans"
-            android:inputType="phone"/>
+    </data>
 
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/cbVerified"
+    <HorizontalScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/have_verification_done"
-        android:buttonTint="@color/blue"
-        style="@style/Text.14.Blue.ProductSans"
-        android:layout_marginEnd="@dimen/_25dp"
-        app:layout_constraintTop_toTopOf="@id/tilContact"
-        app:layout_constraintBottom_toBottomOf="@id/tilContact"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        android:scrollbars="none">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilContact"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="@dimen/_200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25dp"
+                android:layout_marginTop="@dimen/_15dp"
+                android:layout_marginEnd="@dimen/_10dp"
+                android:hint="@string/enter_mobile_number"
+                app:layout_constraintEnd_toStartOf="@id/cbVerified"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/Text.14.Blue.ProductSans"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:maxLength="11"
+                    android:digits="0123456789"
+                    android:inputType="phone" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/cbVerified"
+                style="@style/Text.14.Blue.ProductSans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/blue"
+                android:text="@string/have_verification_done"
+                app:layout_constraintBottom_toBottomOf="@id/tilContact"
+                app:layout_constraintEnd_toStartOf="@id/tilName"
+                app:layout_constraintStart_toEndOf="@id/tilContact"
+                app:layout_constraintTop_toTopOf="@id/tilContact" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilName"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15dp"
+                android:layout_marginTop="@dimen/_15dp"
+                android:layout_marginEnd="@dimen/_10dp"
+                android:hint="@string/enter_person_name"
+                app:layout_constraintEnd_toStartOf="@id/tilPhysicalAddress"
+                app:layout_constraintStart_toEndOf="@id/cbVerified"
+                app:layout_constraintTop_toTopOf="@id/tilContact"
+                app:layout_constraintBottom_toBottomOf="@id/tilContact">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/Text.14.Blue.ProductSans"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLength="101"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPersonName" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilPhysicalAddress"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="@dimen/_200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15dp"
+                android:layout_marginTop="@dimen/_15dp"
+                android:layout_marginEnd="@dimen/_10dp"
+                android:hint="@string/enter_address"
+                app:layout_constraintEnd_toStartOf="@id/tilOnlineAddress"
+                app:layout_constraintStart_toEndOf="@id/tilName"
+                app:layout_constraintTop_toTopOf="@id/tilContact"
+                app:layout_constraintBottom_toBottomOf="@id/tilContact">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/Text.14.Blue.ProductSans"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:maxLength="201"
+                    android:singleLine="true"
+                    android:inputType="textPostalAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilOnlineAddress"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="@dimen/_200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15dp"
+                android:layout_marginTop="@dimen/_15dp"
+                android:layout_marginEnd="@dimen/_10dp"
+                android:hint="@string/enter_online_address"
+                app:layout_constraintEnd_toStartOf="@id/ivDelete"
+                app:layout_constraintStart_toEndOf="@id/tilPhysicalAddress"
+                app:layout_constraintTop_toTopOf="@id/tilContact"
+                app:layout_constraintBottom_toBottomOf="@id/tilContact">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/Text.14.Blue.ProductSans"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:maxLength="101"
+                    android:singleLine="true"
+                    android:inputType="textEmailAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_15dp"
+                android:padding="@dimen/_5dp"
+                android:layout_marginTop="@dimen/_5dp"
+                app:layout_constraintBottom_toBottomOf="@id/tilContact"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tilContact"
+                app:srcCompat="@drawable/ic_delete" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </HorizontalScrollView>
+</layout>

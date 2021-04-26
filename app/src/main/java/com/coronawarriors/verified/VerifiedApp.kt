@@ -7,6 +7,8 @@ import dagger.hilt.android.HiltAndroidApp
 @HiltAndroidApp
 class VerifiedApp : Application() {
 
-        fun getInstance(): Context = applicationContext
+        override fun onCreate() {
+                super.onCreate()
+        }
 
 }

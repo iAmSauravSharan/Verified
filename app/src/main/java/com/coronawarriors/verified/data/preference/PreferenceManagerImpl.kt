@@ -17,6 +17,7 @@ class PreferenceManagerImpl(@ApplicationContext private val context: Context): P
         const val APP_LAUNCH_STATUS = "app_launch_status"
         const val LOGIN_KEY = "login_key"
         const val COUNTRY_KEY = "country_key"
+        const val USER_NAME_KEY = "user_name_key"
         const val ACCOUNT_ID_KEY = "account_id_key"
         const val ACCOUNT_TOKEN_KEY = "account_token_key"
     }
@@ -42,6 +43,8 @@ class PreferenceManagerImpl(@ApplicationContext private val context: Context): P
         sharedPreferences, LOGIN_KEY, false)
     override var country: String? by StringPreference(
         sharedPreferences, COUNTRY_KEY, DEFAULT_COUNTRY)
+    override var userName: String? by StringPreference(
+        sharedPreferences, USER_NAME_KEY, DEFAULT_COUNTRY)
     override var accountId: String? by StringPreference(
         sharedPreferences, ACCOUNT_ID_KEY, EMPTY_STRING)
     override var accountIdToken: String? by StringPreference(

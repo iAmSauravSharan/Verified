@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.coronawarriors.verified.ui.settings.SettingsViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.settings.SettingsActivity">
+
+        <include
+            android:id="@+id/include"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            layout="@layout/layout_header"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLoginMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Text.14.Blue.ProductSans"
+            android:textColor="@color/grey"
+            android:text="@string/want_to_contribute"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/include"
+            android:layout_marginStart="@dimen/_25dp"
+            android:layout_marginTop="@dimen/_25dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLogIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Text.14.Blue.ProductSans"
+            android:text="@string/login"
+            android:onClick="@{() -> viewModel.onLoginClicked()}"
+            android:paddingTop="@dimen/_5dp"
+            android:paddingBottom="@dimen/_7dp"
+            android:paddingStart="@dimen/_25dp"
+            android:paddingEnd="@dimen/_25dp"
+            android:layout_marginEnd="@dimen/_25dp"
+            android:background="@drawable/blue_border_round_rectangle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvLoginMessage"
+            app:layout_constraintBottom_toBottomOf="@id/tvLoginMessage"/>
+
+        <View
+            android:id="@+id/dividerView1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1dp"
+            android:background="@color/lightest_grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_25dp"
+            app:layout_constraintTop_toBottomOf="@id/tvLogIn"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvContactHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Text.14.Blue.ProductSans"
+            android:paddingStart="@dimen/_10dp"
+            android:textColor="@color/light_grey"
+            android:layout_marginTop="@dimen/_15dp"
+            android:layout_marginStart="@dimen/_15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dividerView1"
+            android:text="@string/didnt_find"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvContactUs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Text.14.Blue.ProductSans"
+            android:paddingEnd="@dimen/_10dp"
+            android:background="?selectableItemBackground"
+            android:layout_marginStart="@dimen/_4dp"
+            android:onClick="@{() -> viewModel.onContactUsClicked()}"
+            app:layout_constraintStart_toEndOf="@id/tvContactHeading"
+            app:layout_constraintTop_toTopOf="@id/tvContactHeading"
+            app:layout_constraintBottom_toBottomOf="@id/tvContactHeading"
+            android:text="@string/contact_us"/>
+
+        <View
+            android:id="@+id/dividerView2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1dp"
+            android:background="@color/lightest_grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_15dp"
+            app:layout_constraintTop_toBottomOf="@id/tvContactUs"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvShare"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Text.14.Blue.ProductSans"
+            android:padding="@dimen/_10dp"
+            android:drawablePadding="@dimen/_10dp"
+            android:drawableTint="@color/blue"
+            android:drawableStart="@drawable/ic_share"
+            android:onClick="@{() -> viewModel.onShareUsClicked()}"
+            android:background="?selectableItemBackground"
+            android:layout_marginTop="@dimen/_10dp"
+            android:layout_marginStart="@dimen/_15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dividerView2"
+            android:text="@string/share_with_friends"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

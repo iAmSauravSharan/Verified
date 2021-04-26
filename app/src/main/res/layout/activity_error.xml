@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.error.ErrorActivity">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/errorAnimation"
+            android:layout_width="@dimen/_200dp"
+            android:layout_height="@dimen/_200dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="false"
+            app:lottie_rawRes="@raw/verified_animation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvErrorMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/_20dp"
+            android:paddingEnd="@dimen/_20dp"
+            tools:text="Seems like internet is not available at your device. Try switching on your wifi"
+            android:layout_marginTop="@dimen/_25dp"
+            android:layout_marginStart="@dimen/_25dp"
+            android:layout_marginEnd="@dimen/_25dp"
+            style="@style/Text.18.Black.GoogleSans"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/errorAnimation"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTryAgain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/try_again"
+            android:paddingStart="@dimen/_20dp"
+            android:paddingEnd="@dimen/_20dp"
+            android:layout_marginTop="@dimen/_20dp"
+            android:paddingTop="@dimen/_10dp"
+            android:paddingBottom="@dimen/_10dp"
+            style="@style/Text.14.Blue.ProductSans"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/blue_border_round_rectangle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvErrorMessage"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

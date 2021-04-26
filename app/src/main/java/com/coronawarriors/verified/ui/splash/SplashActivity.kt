@@ -34,6 +34,8 @@ class SplashActivity : AppCompatActivity() {
         Timer().schedule(1700) {
             if (repository.isAppLaunchedForTheFirstTime || !repository.isLoggedIn) launchFormPage()
             else if (repository.isLoggedIn) launchHomePage()
+            else launchFormPage()
+            repository.isAppLaunchedForTheFirstTime = false
         }
     }
 
