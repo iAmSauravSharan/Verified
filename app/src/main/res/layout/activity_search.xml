@@ -5,6 +5,10 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.coronawarriors.verified.ui.search.SearchViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,6 +25,7 @@
             app:layout_constraintStart_toStartOf="parent"
             android:padding="@dimen/_10dp"
             android:id="@+id/ivBack"
+            android:onClick="@{() -> viewModel.onBackButtonClicked()}"
             android:layout_marginStart="@dimen/_10dp" />
 
         <androidx.appcompat.widget.AppCompatEditText
@@ -32,6 +37,7 @@
             android:layout_marginStart="@dimen/_5dp"
             android:layout_marginEnd="@dimen/_20dp"
             android:layout_marginTop="@dimen/_15dp"
+            android:cursorVisible="false"
             android:paddingTop="@dimen/_10dp"
             android:paddingBottom="@dimen/_10dp"
             android:background="@drawable/search_background_border_grey"
@@ -50,6 +56,7 @@
             android:rotation="45"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="@id/etSearch"
+            android:onClick="@{() -> viewModel.onClearTextClicked()}"
             app:layout_constraintTop_toTopOf="@id/etSearch"
             android:layout_marginEnd="@dimen/_10dp"
             app:layout_constraintBottom_toBottomOf="@id/etSearch" />
@@ -58,9 +65,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_5dp"
+            android:id="@+id/rvSearchSuggestion"
             app:layout_constraintStart_toStartOf="parent"
             tools:listitem="@layout/item_search_suggestion"
             android:padding="@dimen/_15dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="vertical"
             app:layout_constraintTop_toBottomOf="@id/etSearch"
             app:layout_constraintEnd_toEndOf="parent" />
 

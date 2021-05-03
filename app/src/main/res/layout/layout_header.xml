@@ -23,11 +23,22 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
 
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivPic"
+            android:layout_width="@dimen/_40dp"
+            android:layout_height="@dimen/_40dp"
+            android:padding="@dimen/_5dp"
+            android:layout_marginStart="@dimen/_10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tvScreenName"
             tools:text="Settings"
+            android:paddingStart="@dimen/_5dp"
             style="@style/Text.18.Black.GoogleSans"
             app:layout_constraintStart_toEndOf="@id/ivBack"
             android:layout_marginStart="@dimen/_15dp"

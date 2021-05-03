@@ -14,6 +14,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/_25dp"
         android:id="@+id/svMain">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -45,6 +46,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/Text.14.Blue.ProductSans"
+                    android:text="@={viewModel.requirementType}"
                     android:imeOptions="actionNext"
                     android:onClick="@{() -> viewModel.onRequirementTypeClicked()}"
                     android:editable="false"/>
@@ -66,6 +68,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/Text.14.Blue.ProductSans"
+                    android:text="@={viewModel.extraNotes}"
                     android:imeOptions="actionNext"
                     android:inputType="text"
                     android:singleLine="true"/>
@@ -77,16 +80,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_margin="@dimen/_25dp"
+                android:layout_marginStart="@dimen/_25dp"
+                android:layout_marginEnd="@dimen/_25dp"
+                android:layout_marginTop="@dimen/_10dp"
                 android:hint="@string/select_your_state"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tilExtraNotes"
+                app:layout_constraintTop_toBottomOf="@id/tvChangeCountry"
                 app:layout_constraintEnd_toEndOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/Text.14.Blue.ProductSans"
+                    android:text="@={viewModel.state}"
                     android:imeOptions="actionNext"
                     android:onClick="@{() -> viewModel.onStateClicked()}"
                     android:editable="false"/>
@@ -109,6 +115,7 @@
                     android:layout_height="wrap_content"
                     style="@style/Text.14.Blue.ProductSans"
                     android:imeOptions="actionNext"
+                    android:text="@={viewModel.city}"
                     android:onClick="@{() -> viewModel.onCityClicked()}"
                     android:editable="false"/>
 
@@ -126,7 +133,7 @@
                 style="@style/Text.11.linkBlue.ProductSans"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tilCity"
+                app:layout_constraintTop_toBottomOf="@id/tilExtraNotes"
                 tools:text="Not from India? Click here to select your country"/>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -136,10 +143,11 @@
                 android:layout_height="wrap_content"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_marginStart="@dimen/_25dp"
+                android:layout_marginTop="@dimen/_25dp"
                 android:layout_marginEnd="@dimen/_25dp"
                 android:hint="@string/enter_landmark"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvChangeCountry"
+                app:layout_constraintTop_toBottomOf="@id/tilCity"
                 app:layout_constraintEnd_toStartOf="@id/tilQuantity">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -147,6 +155,7 @@
                     android:layout_height="wrap_content"
                     style="@style/Text.14.Blue.ProductSans"
                     android:singleLine="true"
+                    android:text="@={viewModel.landMark}"
                     android:imeOptions="actionNext"
                     android:inputType="textPostalAddress"/>
 
@@ -159,9 +168,10 @@
                 app:layout_constraintHorizontal_weight="1"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_marginEnd="@dimen/_25dp"
+                android:layout_marginTop="@dimen/_25dp"
                 android:hint="@string/quantity"
                 app:layout_constraintStart_toEndOf="@id/tilLandmark"
-                app:layout_constraintTop_toBottomOf="@id/tvChangeCountry"
+                app:layout_constraintTop_toBottomOf="@id/tilCity"
                 app:layout_constraintEnd_toEndOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -169,8 +179,9 @@
                     android:layout_height="wrap_content"
                     style="@style/Text.14.Blue.ProductSans"
                     android:singleLine="true"
-                    android:maxLength="11"
-                    android:imeOptions="actionNext"
+                    android:text="@={viewModel.quantity}"
+                    android:maxLength="8"
+                    android:imeOptions="actionGo"
                     android:inputType="number"/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -220,6 +231,7 @@
                 android:layout_marginStart="@dimen/_25dp"
                 android:layout_marginEnd="@dimen/_25dp"
                 android:layout_marginTop="@dimen/_15dp"
+                android:layout_marginBottom="@dimen/_10dp"
                 android:onClick="@{() -> viewModel.onSubmit()}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

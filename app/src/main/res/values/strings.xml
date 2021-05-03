@@ -3,7 +3,7 @@
     <string name="hashtag_together_we_can">#togetherWeCan</string>
     <string name="choose_your_requirement">Choose your requirement</string>
     <string name="select_your_state">Select your state</string>
-    <string name="select_your_city">Select your district</string>
+    <string name="select_your_city">Select your city</string>
     <string name="search">Search</string>
     <string name="verify_contacts">Verify Contacts</string>
     <string name="community_needs_volunteer">Verified is a combined effort of our online community. Want to volunteer?</string>
@@ -11,7 +11,7 @@
     <string name="search_requirement">Search Requirements</string>
     <string name="requirement_type">Requirement Type : </string>
     <string name="available_on">Available On</string>
-    <string name="quantity">Quanitty</string>
+    <string name="quantity">Quantity</string>
     <string name="last_updated_on">Last Updated On</string>
     <string name="showVerified">Show only verified contacts</string>
     <string name="have_verification_done">verified?</string>
@@ -62,4 +62,10 @@
     <string name="enter_online_address">Enter Online Address, if any</string>
     <string name="enter_address">Enter contact address</string>
     <string name="enter_person_name">Enter person name</string>
+    <string name="click_to_change_country">Click here to change country</string>
+    <string name="error_getting_data">Oops! We can not find what you are looking for. Try rewarding your search by more brief text</string>
+    <string name="remove">Remove</string>
+    <string name="mark_as_duplicate">Mark as duplicate</string>
+    <string name="requirement_updated_successfully">Requirement updated successfully</string>
+    <string name="error_updating_requirement">Error updating requirement</string>
 </resources>

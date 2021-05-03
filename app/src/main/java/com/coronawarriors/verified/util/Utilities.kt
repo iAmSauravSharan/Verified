@@ -5,7 +5,6 @@ import android.content.Intent
 import android.net.Uri
 import com.coronawarriors.verified.BuildConfig
 import com.coronawarriors.verified.R
-import java.lang.String
 import java.util.*
 
 object Utilities {
@@ -24,7 +23,12 @@ object Utilities {
             BuildConfig.STORE_LINK
         )
         intent.putExtra(Intent.EXTRA_TEXT, message)
-        context.startActivity(Intent.createChooser(intent, context.resources.getString(R.string.app_name)))
+        context.startActivity(
+            Intent.createChooser(
+                intent,
+                context.resources.getString(R.string.app_name)
+            )
+        )
     }
 
     /**

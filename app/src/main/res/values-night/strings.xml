@@ -2,14 +2,14 @@
 <resources>
     <string name="choose_your_requirement">Choose your requirement</string>
     <string name="select_your_state">Select your state</string>
-    <string name="select_your_city">Select your district</string>
+    <string name="select_your_city">Select your city</string>
     <string name="verify_contacts">Verify Contacts</string>
     <string name="community_needs_volunteer">Verified is a combined effort of our online community. Want to volunteer?</string>
     <string name="update_requirements">Update Requirements</string>
     <string name="search_requirement">Search Requirements</string>
     <string name="requirement_type">Requirement Type : </string>
     <string name="available_on">Available On</string>
-    <string name="quantity">Quanitty</string>
+    <string name="quantity">Quantity</string>
     <string name="last_updated_on">Last Updated On</string>
     <string name="showVerified">Show only verified contacts</string>
     <string name="have_verification_done">verified?</string>
